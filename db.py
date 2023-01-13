@@ -7,7 +7,7 @@ cert = certifi.where()
 
 def dbConnection():
     try:
-        client = MongoClient.connect(MONGODB_URL, tlsCAFile=cert)
+        client = MongoClient(MONGODB_URL, tlsCAFile=cert)
         db = client["dbb_produtos_app"]
     except ConnectionError:
         print('Erro de conexao com o banco de dados')
